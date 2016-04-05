@@ -1,0 +1,21 @@
+{
+    "webPort": "process.env.INCOMING_PUSH_PORT",
+    "sqlitePath": "./database.sqlite",
+    "gcm": {
+        "apiKey": "YOUR_API_KEY_HERE"
+    },
+    "apn": {
+        "connection": {
+            "gateway": "gateway.sandbox.push.apple.com",
+            "cert": "/path/to/cert.pem",
+            "key": "/path/to/key.pem"
+        },
+        "feedback": {
+            "address": "feedback.sandbox.push.apple.com",
+            "cert": "/path/to/cert.pem",
+            "key": "/path/to/key.pem",
+            "interval": 43200,
+            "batchFeedback": true
+        }
+    }
+}

@@ -1,0 +1,15 @@
+version: '2'
+services:
+  push-notifier:
+    build: ./push-notifier/
+    ports:
+      - "3006:3006"
+    environment:
+      - INCOMING_PUSH_PORT=3006
+
+  event-api:
+    build: ./event-api/
+    ports:
+      - "3007:3007"
+    links:
+      - push-notifier
