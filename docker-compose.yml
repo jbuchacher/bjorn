@@ -6,6 +6,8 @@ services:
       - "3006:3006"
     environment:
       - INCOMING_PUSH_PORT=3006
+    volumes:
+      - ./push-notifier/src:/opt/push-notifier
 
   event-api:
     build: ./event-api/
@@ -13,3 +15,5 @@ services:
       - "3007:3007"
     links:
       - push-notifier
+    volumes:
+      - ./event-api/src:/opt/event-api

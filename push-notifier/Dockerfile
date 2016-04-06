@@ -1,12 +1,13 @@
 FROM node:5.10.0
 MAINTAINER Josh Buchacher "jbuchacher@me.com"
 
-RUN mkdir -p /opt/push-server
+ENV APP_DIR /opt/push-notifier
+
+VOLUME $APP_DIR
+WORKDIR $APP_DIR
+
 RUN npm install -g node-pushserver
-WORKDIR /opt/push-server
-
-ADD config.json /opt/push-server
-
-CMD [ "pushserver", "-c", "/opt/push-server/config.json"]
 
 EXPOSE 3001
+
+CMD [ "pushserver", "-c", "/opt/push-notifier/config.json"]
