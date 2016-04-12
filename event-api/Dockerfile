@@ -8,4 +8,4 @@ WORKDIR $APP_DIR
 
 RUN npm install
 
-CMD [ "/bin/bash" ]
+CMD [ "npm", "start"]
