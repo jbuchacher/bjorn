@@ -7,5 +7,6 @@ VOLUME $APP_DIR
 WORKDIR $APP_DIR
 
 RUN npm install
+RUN npm install -g sequelize-cli
 
 CMD [ "npm", "start"]
