@@ -21,6 +21,7 @@ services:
       - POSTGRES_HOST=db
     links:
       - push-notifier
+      - db
     volumes:
       - ./event-api/src:/opt/event-api
     depends_on:
