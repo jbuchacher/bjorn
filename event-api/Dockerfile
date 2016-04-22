@@ -5,13 +5,15 @@ ENV APP_DIR /opt/event-api
 
 RUN mkdir -p $APP_DIR
 WORKDIR $APP_DIR
-VOLUME $APP_DIR
 
 RUN npm install -g sequelize-cli
 
 COPY src/package.json .
-RUN npm install
+RUN npm install --quiet
 
-COPY . $APP_DIR
+COPY src .
+
+EXPOSE 3007
+VOLUME $APP_DIR
 
 CMD [ "npm", "start"]

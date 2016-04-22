@@ -6,8 +6,6 @@ services:
       - "3006:3006"
     environment:
       - INCOMING_PUSH_PORT=3006
-    volumes:
-      - ./push-notifier/src:/opt/push-notifier
 
   event-api:
     build: ./event-api/
@@ -22,8 +20,6 @@ services:
     links:
       - push-notifier
       - db
-    volumes:
-      - ./event-api/src:/opt/event-api
     depends_on:
       - db
 
